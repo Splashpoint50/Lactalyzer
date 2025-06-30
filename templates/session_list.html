@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Session List</title>
+</head>
+<body style="font-family:sans-serif;">
+    <h1>Available Sessions</h1>
+    <ul>
+        {% for folder in folders %}
+            <li><a href="/sessions/{{ folder }}">{{ folder }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>
