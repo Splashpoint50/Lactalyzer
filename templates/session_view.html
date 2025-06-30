@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Session {{ session_id }}</title>
+</head>
+<body style="font-family:sans-serif;">
+    <h1>Session: {{ session_id }}</h1>
+
+    <h2>CSV Log</h2>
+    <table border="1" cellpadding="5" cellspacing="0">
+        {% for row in csv_data %}
+            <tr>
+                {% for col in row %}
+                    <td>{{ col }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Prediction Results</h2>
+    <pre>{{ predictions | tojson(indent=2) }}</pre>
+
+    <a href="/sessions">Back to Sessions</a>
+</body>
+</html>
